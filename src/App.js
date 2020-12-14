@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./css/bootstrap.css";
+import "./css/styles.css";
+import "./css/contactstyle.css";
+import "./css/faqstyle.css";
+import "./css/flexslider.css";
+import "./css/font-awesome.min.css";
+import "./css/googlefont.css";
+import "./css/jquery.slidey.min.css";
+import "./css/medile.css";
+import "./css/news.css";
+import "./css/owl.carousel.css";
+import "./css/popuo-box.css";
+import "./css/single.css";
+import "./App.css";
+
+import IndexHeader from 'header/IndexHeader';
+import Navbar from "body/navbar/Navbar";
+import BannerInfo from "body/banner/BannerInfo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <IndexHeader />
+      <Navbar />
+      <BannerInfo/>
     </div>
   );
 }
