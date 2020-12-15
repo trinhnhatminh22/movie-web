@@ -17,3 +17,18 @@
     display: block;
     background-color: rgba(0, 0, 0, 0.5) ;
 }
+
+.slidey-overlay .slidey-progress {
+    animation: progressload 6s ease-in-out  infinite;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+@keyframes progressload {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

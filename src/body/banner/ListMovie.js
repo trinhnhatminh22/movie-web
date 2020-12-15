@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Dotdotdot from "react-dotdotdot";
 
-const URL_IMAGE_HD = "https://image.tmdb.org/t/p/original";
-
 class ListMovie extends Component {
   constructor(props) {
     super(props);
@@ -34,8 +32,7 @@ class ListMovie extends Component {
                   <div
                     className="slidey-list-thumbnail"
                     style={{
-                      backgroundImage: `url(${
-                        URL_IMAGE_HD + this.props.movie?.backdrop_path
+                      backgroundImage: `url(${this.props.movie?.backdrop_path
                       })`,
                       width: "91px",
                       height: "91px",

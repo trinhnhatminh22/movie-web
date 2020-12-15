@@ -16,6 +16,8 @@ import "./App.css";
 import IndexHeader from 'header/IndexHeader';
 import Navbar from "body/navbar/Navbar";
 import BannerInfo from "body/banner/BannerInfo";
+import BannerBottom from "body/banner/BannerBottom";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
       <IndexHeader />
       <Navbar />
       <BannerInfo/>
+      <BannerBottom/>
     </div>
   );
 }
