@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Popup from "header/Popup";
+import Popup from "Component/header/Popup";
+import { Link } from 'react-router-dom';
 class IndexHeader extends Component {
   constructor(props) {
     super(props);
@@ -38,11 +39,11 @@ class IndexHeader extends Component {
         <div className="header">
           <div className="container">
             <div className="w3layouts_logo">
-              <a href="index.html">
+              <Link to="/">
                 <h1>
                   One<span>Movies</span>
                 </h1>
-              </a>
+              </Link>
             </div>
             <div className="w3_search">
               <form action="" method="post">
@@ -63,14 +64,14 @@ class IndexHeader extends Component {
                   345 653
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     data-toggle="modal"
                     data-target="#myModal"
                     onClick={this.showLoginForm}
                   >
                     Login
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

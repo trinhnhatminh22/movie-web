@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 class Popup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        openOrNot: true
-    }
+      openOrNot: true,
+    };
     this.handleClick = this.handleClick.bind(this);
     this.fixCloseModal = this.fixCloseModal.bind(this);
     this.showCreateAccount = this.showCreateAccount.bind(this);
   }
-  showCreateAccount(){
-      console.log('hello');
-      this.setState({
-          openOrNot : !this.state.openOrNot
-      })
+  showCreateAccount() {
+    console.log("hello");
+    this.setState({
+      openOrNot: !this.state.openOrNot,
+    });
   }
   handleClick() {
     this.props.closeFunc();
@@ -34,7 +34,11 @@ class Popup extends Component {
         role="dialog"
         aria-labelledby="myModal"
       >
-        <div className="modal-dialog" role="document" onClick={this.fixCloseModal}>
+        <div
+          className="modal-dialog"
+          role="document"
+          onClick={this.fixCloseModal}
+        >
           <div className="modal-content">
             <div className="modal-header">
               Sign In & Sign Up
@@ -54,11 +58,17 @@ class Popup extends Component {
                 <div className="w3_login_module">
                   <div className="module form-module">
                     <div className="toggle">
-                        
-                      <i className="fa fa-times fa-pencil" onClick={this.showCreateAccount}></i>
+                      <i
+                        className="fa fa-times fa-pencil"
+                        onClick={this.showCreateAccount}
+                      ></i>
                       <div className="tooltip">Click Me</div>
                     </div>
-                    <div className={`form ${this.state.openOrNot ? " showagain":" hideinfo"}`}>
+                    <div
+                      className={`form ${
+                        this.state.openOrNot ? " showagain" : " hideinfo"
+                      }`}
+                    >
                       <h3>Login to your account</h3>
                       <form action="#" method="post">
                         <input
@@ -76,7 +86,11 @@ class Popup extends Component {
                         <input type="submit" value="Login" />
                       </form>
                     </div>
-                    <div className={`form ${!this.state.openOrNot ? " showagain":" hideinfo"}`}>
+                    <div
+                      className={`form ${
+                        !this.state.openOrNot ? " showagain" : " hideinfo"
+                      }`}
+                    >
                       <h3>Create an account</h3>
                       <form action="#" method="post">
                         <input
@@ -107,7 +121,7 @@ class Popup extends Component {
                       </form>
                     </div>
                     <div className="cta">
-                      <a href="#">Forgot your password?</a>
+                      <Link to="">Forgot your password?</Link>
                     </div>
                   </div>
                 </div>
@@ -116,7 +130,6 @@ class Popup extends Component {
           </div>
         </div>
       </div>
-      
     );
   }
 }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class SmallBanner extends Component {
   render() {
-    const fullStar = Math.ceil(this.props.movie.vote / 2);
+    const fullStar = Math.ceil(this.props.movie.vote_average / 2);
     const haftStar = this.props.movie.vote / 2 === 0 || fullStar > 4 ? 0 : 1;
     const noStar = 5 - fullStar - haftStar;
     let renderFullStar = () => {
@@ -12,9 +13,9 @@ class SmallBanner extends Component {
             .map((item, i) => {
               return (
                 <li key={i}>
-                  <a href="#">
+                  <Link to=''>
                     <i className="fa fa-star" aria-hidden="true"></i>
-                  </a>
+                  </Link>
                 </li>
               );
             })
@@ -23,9 +24,9 @@ class SmallBanner extends Component {
     let renderHaftStar = () => {
       return haftStar > 0 ? (
         <li>
-          <a href="#">
+          <Link to="">
             <i className="fa fa-star-half-o" aria-hidden="true"></i>
-          </a>
+          </Link>
         </li>
       ) : (
         ""
@@ -38,9 +39,9 @@ class SmallBanner extends Component {
             .map((item, i) => {
               return (
                 <li key={i}>
-                  <a href="#">
+                  <Link to="">
                     <i className="fa fa-star-o" aria-hidden="true"></i>
-                  </a>
+                  </Link>
                 </li>
               );
             })
@@ -50,26 +51,28 @@ class SmallBanner extends Component {
       <div className="owl-item" style={{ width: "222px" }}>
         <div className="item">
           <div className="w3l-movie-gride-agile w3l-movie-gride-agile1">
-            <a href="single.html" className="hvr-shutter-out-horizontal">
+            <Link
+              to={`/detail/${this.props.movie.id}`}
+              className="hvr-shutter-out-horizontal"
+            >
               <img
                 src={this.props.movie.poster_path}
                 title="album-name"
                 className="img-responsive"
-                alt=" "
+                alt=""
               />
               <div className="w3l-action-icon">
                 <i className="fa fa-play-circle" aria-hidden="true"></i>
               </div>
-            </a>
+            </Link>
             <div className="mid-1 agileits_w3layouts_mid_1_home">
               <div className="w3l-movie-text">
                 <h6>
-                  <a href="single.html">{this.props.movie.title}</a>
+                  <Link to="">{this.props.movie.title}</Link>
                 </h6>
               </div>
               <div className="mid-2 agile_mid_2_home">
-                <p>{this.props.movie.release_date.slice(0, 4)}</p>
-                {/* <p>{this.props.movie.release_date}</p> */}
+                <p>{this.props.movie?.release_date.slice(0, 4)}</p>
                 <div className="block-stars">
                   <ul className="w3l-ratings">
                     {renderFullStar()}

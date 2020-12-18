@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class  Navbar extends Component {
    render() {
@@ -13,80 +14,80 @@ class  Navbar extends Component {
               <nav>
                 <ul className ="nav navbar-nav">
                   <li className ="active">
-                    <a href="index.html">Home</a>
+                    <Link to="/">Home</Link>
                   </li>
                   <li className ="dropdown">
-                    <a href="#" className ="dropdown-toggle" data-toggle="dropdown">
+                    <Link to="" className ="dropdown-toggle" data-toggle="dropdown">
                       Genres <b className ="caret"></b>
-                    </a>
+                    </Link>
                     <ul className ="dropdown-menu multi-column columns-3">
                       <li>
                         <div className ="col-sm-4">
                           <ul className ="multi-column-dropdown">
                             <li>
-                              <a href="genres.html">Action</a>
+                              <Link to="/">Action</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Biography</a>
+                            <Link to="/">Biography</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Crime</a>
+                              <Link to="/">Crime</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Family</a>
+                              <Link to="/">Family</Link>
                             </li>
                             <li>
-                              <a href="horror.html">Horror</a>
+                              <Link to="/">Horror</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Romance</a>
+                              <Link to="/">Romance</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Sports</a>
+                              <Link to="/">Sports</Link>
                             </li>
                             <li>
-                              <a href="genres.html">War</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className ="col-sm-4">
-                          <ul className ="multi-column-dropdown">
-                            <li>
-                              <a href="genres.html">Adventure</a>
-                            </li>
-                            <li>
-                              <a href="comedy.html">Comedy</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">Documentary</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">Fantasy</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">Thriller</a>
+                              <Link to="/">War</Link>
                             </li>
                           </ul>
                         </div>
                         <div className ="col-sm-4">
                           <ul className ="multi-column-dropdown">
                             <li>
-                              <a href="genres.html">Animation</a>
+                              <Link to="/">Adventure</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Costume</a>
+                              <Link to="/">Comedy</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Drama</a>
+                              <Link to="/">Documentary</Link>
                             </li>
                             <li>
-                              <a href="genres.html">History</a>
+                              <Link to="/">Fantasy</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Musical</a>
+                              <Link to="/">Thriller</Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className ="col-sm-4">
+                          <ul className ="multi-column-dropdown">
+                            <li>
+                              <Link to="/">Animation</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Psychological</a>
+                              <Link to="/">Costume</Link>
+                            </li>
+                            <li>
+                              <Link to="/">Drama</Link>
+                            </li>
+                            <li>
+                              <Link to="/">History</Link>
+                            </li>
+                            <li>
+                              <Link to="/">Musical</Link>
+                            </li>
+                            <li>
+                              <Link to="/">Psychological</Link>
                             </li>
                           </ul>
                         </div>
@@ -101,56 +102,56 @@ class  Navbar extends Component {
                     <a href="news.html">news</a>
                   </li>
                   <li className ="dropdown">
-                    <a href="#" className ="dropdown-toggle" data-toggle="dropdown">
+                    <Link to="/" className ="dropdown-toggle" data-toggle="dropdown">
                       Country <b className ="caret"></b>
-                    </a>
+                    </Link>
                     <ul className ="dropdown-menu multi-column columns-3">
                       <li>
                         <div className ="col-sm-4">
                           <ul className ="multi-column-dropdown">
                             <li>
-                              <a href="genres.html">Asia</a>
+                              <Link to="/">Asia</Link>
                             </li>
                             <li>
-                              <a href="genres.html">France</a>
+                              <Link to="/">France</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Taiwan</a>
+                              <Link to="/">Taiwan</Link>
                             </li>
                             <li>
-                              <a href="genres.html">United States</a>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className ="col-sm-4">
-                          <ul className ="multi-column-dropdown">
-                            <li>
-                              <a href="genres.html">China</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">HongCong</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">Japan</a>
-                            </li>
-                            <li>
-                              <a href="genres.html">Thailand</a>
+                              <Link to="/">United States</Link>
                             </li>
                           </ul>
                         </div>
                         <div className ="col-sm-4">
                           <ul className ="multi-column-dropdown">
                             <li>
-                              <a href="genres.html">Euro</a>
+                              <Link to="/">China</Link>
                             </li>
                             <li>
-                              <a href="genres.html">India</a>
+                              <Link to="/">HongCong</Link>
                             </li>
                             <li>
-                              <a href="genres.html">Korea</a>
+                              <Link to="/">Japan</Link>
                             </li>
                             <li>
-                              <a href="genres.html">United Kingdom</a>
+                              <Link to="/">Thailand</Link>
+                            </li>
+                          </ul>
+                        </div>
+                        <div className ="col-sm-4">
+                          <ul className ="multi-column-dropdown">
+                            <li>
+                              <Link to="/">Euro</Link>
+                            </li>
+                            <li>
+                              <Link to="/">India</Link>
+                            </li>
+                            <li>
+                              <Link to="/">Korea</Link>
+                            </li>
+                            <li>
+                              <Link to="/">United Kingdom</Link>
                             </li>
                           </ul>
                         </div>
@@ -159,10 +160,10 @@ class  Navbar extends Component {
                     </ul>
                   </li>
                   <li>
-                    <a href="short-codes.html">Short Codes</a>
+                    <Link to="/">Short Codes</Link>
                   </li>
                   <li>
-                    <a href="list.html">A - z list</a>
+                    <Link to="/">A - z list</Link>
                   </li>
                 </ul>
               </nav>

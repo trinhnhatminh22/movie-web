@@ -28,7 +28,7 @@ class ListMovie extends Component {
           <table className="slidey-list-table">
             <tbody>
               <tr>
-                <td rowspan="2" className="slidey-list-thumbnail-container">
+                <td rowSpan="2" className="slidey-list-thumbnail-container">
                   <div
                     className="slidey-list-thumbnail"
                     style={{

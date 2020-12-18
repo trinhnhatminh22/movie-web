@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import ListMovie from "body/banner/ListMovie";
-import axios from "axios";
+import ListMovie from "Component/body/banner/ListMovie";
 import Dotdotdot from "react-dotdotdot";
-
-const URL_IMAGE_HD = "https://image.tmdb.org/t/p/original";
+import { getMovie } from "Component/common/GetData";
 
 class BannerInfo extends Component {
   constructor(props) {
@@ -24,12 +22,12 @@ class BannerInfo extends Component {
     let index = 0;
     this.timeNew();
     if (this.state.index < arr.length - 1) {
+      index = this.state.index + 1;
       this.setState({
         currentMovie: arr[this.state.index + 1],
         index: this.state.index + 1,
         progressBar: "none",
       });
-      index = this.state.index + 1;
     } else {
       this.setState({
         currentMovie: arr[0],
@@ -52,57 +50,39 @@ class BannerInfo extends Component {
     let index = 0;
     this.timeNew();
     if (this.state.index > 0) {
+      index = this.state.index - 1;
       this.setState({
         currentMovie: arr[this.state.index - 1],
         index: this.state.index - 1,
         progressBar: "none",
       });
-      index = this.state.index;
     } else {
       this.setState({
         currentMovie: arr[arr.length - 1],
         index: arr.length - 1,
         progressBar: "none",
       });
-      index = arr.length;
+      index = arr.length - 1;
     }
     this.scrollTopEl(index);
   }
   scrollTopEl = (index) => {
     const div = this.myRef.current;
-    if (index > 4) {
-      let value = (index - 4) * (div.clientHeight / 5);
-      div.scrollTop = value;
-    } else if (index === 0) {
-      div.scrollTop = 0;
+    if (div) {
+      if (index > 4) {
+        let value = (index - 4) * 100;
+        div.scrollTop = value;
+      } else if (index <= 4) {
+        div.scrollTop = 0;
+      }
     }
   };
   componentDidMount() {
-    axios({
-      method: "get",
-      url:
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=1e2d3e04a46a4b641682a83ebd1b0bf1&language=en-US&page=1",
-    })
+    getMovie("/movie/upcoming?")
       .then((res) => {
-        let tmp = [];
-        for (var i of res.data.results) {
-          tmp.push({
-            id: i.id,
-            overview: i.overview,
-            title: i.title,
-            poster_path: URL_IMAGE_HD + i.poster_path,
-            release_date: i.release_date,
-            vote_average: i.vote_average,
-            vote_count: i.vote_count,
-            backdrop_path: URL_IMAGE_HD + i.backdrop_path,
-          });
-        }
-        return tmp;
-      })
-      .then((doc) => {
         this.setState({
-          movieList: doc,
-          currentMovie: doc[this.state.index],
+          movieList: res,
+          currentMovie: res[this.state.index],
         });
       })
       .catch((err) => {
@@ -110,13 +90,13 @@ class BannerInfo extends Component {
       });
   }
   chooseMovie(event) {
+    console.log(event);
     this.timeNew();
     this.setState({
       currentMovie: this.state.movieList[event],
       index: event,
       progressBar: "none",
     });
-    this.scrollTopEl();
   }
 
   showListMovie() {
